@@ -4,6 +4,8 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 
+import { Toaster } from "@/components/ui/toaster";
+
 const inter = Inter({ subsets: ["latin"] });
 
 const geistSans = Geist({
@@ -44,6 +46,7 @@ export default function RootLayout({
         }}
       >
       <body className={`${inter.className} bg-dark-2`}>
+        <Toaster />
         {children}
       </body>
       </ClerkProvider>

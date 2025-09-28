@@ -4,6 +4,9 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 
+import "@stream-io/video-react-sdk/dist/css/styles.css";
+
+
 import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,6 +24,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "YOOM",
   description: "Video calling App",
+  icons: {
+    icon: "/icons/logo.svg",
+  },
 };
 
 export default function RootLayout({

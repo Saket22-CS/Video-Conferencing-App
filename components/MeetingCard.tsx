@@ -41,7 +41,7 @@ const MeetingCard = ({
           </div>
         </div>
       </article>
-      <article className={cn("flex justify-center relative", {})}>
+      <article className="flex justify-between items-center mt-4 relative">
         <div className="relative flex w-full max-sm:hidden">
           {avatarImages.map((img, index) => (
             <Image
@@ -59,32 +59,33 @@ const MeetingCard = ({
           </div>
         </div>
         {!isPreviousMeeting && (
-          <div className="flex gap-2">
-            <Button onClick={handleClick} className="rounded bg-blue-1 px-6">
-              {buttonIcon1 && (
-                <Image src={buttonIcon1} alt="feature" width={20} height={20} />
-              )}
-              &nbsp; {buttonText}
-            </Button>
-            <Button
-              onClick={() => {
-                navigator.clipboard.writeText(link);
-                toast({
-                  title: "Link Copied",
-                });
-              }}
-              className="bg-dark-4 px-6"
-            >
-              <Image
-                src="/icons/copy.svg"
-                alt="feature"
-                width={20}
-                height={20}
-              />
-              &nbsp; Copy Link
-            </Button>
-          </div>
-        )}
+  <div className="flex gap-2 flex-shrink-0">
+    <Button onClick={handleClick} className="rounded bg-blue-1 px-6">
+      {buttonIcon1 && (
+        <Image src={buttonIcon1} alt="feature" width={20} height={20} />
+      )}
+      &nbsp; {buttonText}
+    </Button>
+    <Button
+      onClick={() => {
+        navigator.clipboard.writeText(link);
+        toast({
+          title: "Link Copied",
+        });
+      }}
+      className="bg-dark-4 px-6"
+    >
+      <Image
+        src="/icons/copy.svg"
+        alt="feature"
+        width={20}
+        height={20}
+      />
+      &nbsp; Copy Link
+    </Button>
+  </div>
+)}
+
       </article>
     </section>
   );

@@ -163,7 +163,7 @@ yarn dev
 
 | Upcoming Page | Previous Page |
 |---------------|---------------|
-| ![Upcoming](output_images/upcomingpage.png) | ![Previous](output_Images/previouspmeetingpage.png) |
+| ![Upcoming](output_Images/upcomingpage.png) | ![Previous](output_Images/previouspmeetingpage.png) |
 
 | Recording Page | Personal Room Page |
 |----------------|--------------------|

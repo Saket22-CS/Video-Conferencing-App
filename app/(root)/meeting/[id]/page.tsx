@@ -11,8 +11,12 @@ import Alert from '@/components/Alert';
 import MeetingSetup from '@/components/MeetingSetup';
 import MeetingRoom from '@/components/MeetingRoom';
 
-const MeetingPage = ({ params }: { params: Promise<{ id: string }> }) => {
+const MeetingPage = () => {
   const { id } = useParams();
+  const { isLoaded, user } = useUser();
+  const { call, isCallLoading } = useGetCallById(id || '');
+  const [isSetupComplete, setIsSetupComplete] = useState(false);
+
   if (!id) {
     return (
       <p className="text-center text-3xl font-bold text-white">
@@ -20,11 +24,6 @@ const MeetingPage = ({ params }: { params: Promise<{ id: string }> }) => {
       </p>
     );
   }
-
-
-  const { isLoaded, user } = useUser();
-  const { call, isCallLoading } = useGetCallById(id);
-  const [isSetupComplete, setIsSetupComplete] = useState(false);
 
   if (!isLoaded || isCallLoading) return <Loader />;
 
